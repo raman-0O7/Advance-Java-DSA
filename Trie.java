@@ -1,4 +1,4 @@
-//import static jdk.javadoc.internal.doclets.toolkit.util.DocFinder.search;
+
 
 public class Trie
 {
@@ -30,7 +30,7 @@ public class Trie
         }
         return true;
     }
-//kks
+
     public static boolean wordBroken(String word) {
         if(word.isEmpty()) return true;
         for(int i=1; i<=word.length(); i++) {

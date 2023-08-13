@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -18,7 +17,7 @@ public class Graph {
         final int V = 7;
         ArrayList<Edge>[] graph = new ArrayList[V];
 
-        crateAGraph(graph);
+        createAGraph(graph);
 
 //        for (int i = 0; i<graph[2].size(); i++) {
 //            Edge e = graph[2].get(i);
@@ -81,7 +80,7 @@ public class Graph {
         }
     }
 
-    private static void crateAGraph(ArrayList<Edge>[] graph) {
+    private static void createAGraph(ArrayList<Edge>[] graph) {
 //        Arrays.fill(graph, new ArrayList<Edge>());
         for(int i=0; i<graph.length; i++) {
             graph[i] = new ArrayList<Edge>();
