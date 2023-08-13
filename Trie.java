@@ -30,12 +30,25 @@ public class Trie
         }
         return true;
     }
+
+    public static boolean wordBroken(String word) {
+        if(word.isEmpty()) return true;
+        for(int i=1; i<=word.length(); i++) {
+            boolean a = search(word.substring(0, i));
+            boolean b = wordBroken(word.substring(i));
+            if(a && b) return true;
+        }
+        return false;
+    }
     public static void main(String[] args) {
+
         String[] words = {"the", "a", "there", "their", "any"};
         for(String word: words) {
             insert(word);
         }
 
         System.out.println(search("an"));
+
+        System.out.println(wordBroken("thether"));
     }
 }
