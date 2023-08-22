@@ -21,7 +21,7 @@ public class BellmanFordAlgo {
         graph[1].add(new Edge(1, 2, -4));
         graph[2].add(new Edge(2, 3, 2));
         graph[3].add(new Edge(3, 4, 4));
-        graph[4].add(new Edge(4, 1, -1));
+        graph[4].add(new Edge(4, 1, -10));
 
     }
 
@@ -39,6 +39,16 @@ public class BellmanFordAlgo {
 
                     if(ans[u] != Integer.MAX_VALUE && (ans[u] + e.weight < ans[v])) ans[v] = ans[u] + e.weight;
                 }
+            }
+        }
+
+        for(int i=0; i<V; i++) {
+            for(int j=0; j<graph[i].size(); j++) {
+                Edge e = graph[i].get(j);
+                int u = e.src;
+                int v= e.dest;
+
+                if(ans[u] != Integer.MAX_VALUE && (ans[u] + e.weight < ans[v])) System.out.println("Negative weight cycle occurs!!!");
             }
         }
 
