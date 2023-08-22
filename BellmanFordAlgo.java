@@ -26,7 +26,6 @@ public class BellmanFordAlgo {
     }
 
     public static void bellmanFord(ArrayList<Edge>[] graph, int src, int V) {
-        boolean[] vis = new boolean[V];
         int[] ans = new int[V];
         for(int i=0; i<V; i++) {
             if(src != i) ans[i] = Integer.MAX_VALUE;
